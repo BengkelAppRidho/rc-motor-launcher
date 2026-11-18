@@ -84,14 +84,14 @@ class MainActivity : Activity() {
             setImageResource(R.drawable.rc_logo)
             scaleType = ImageView.ScaleType.FIT_CENTER
         }
-        val logoLp = LinearLayout.LayoutParams(dp(42), dp(42))
+        val logoLp = LinearLayout.LayoutParams(dp(54), dp(54))
         logoLp.rightMargin = dp(10)
         top.addView(logo, logoLp)
 
         val brandBlock = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
         val brand = TextView(this).apply {
             text = "RC MOTOR"
-            textSize = 20f
+            textSize = 22f
             setTextColor(white)
             typeface = Typeface.create("sans-serif-condensed", Typeface.BOLD)
             letterSpacing = 0.11f
@@ -99,7 +99,7 @@ class MainActivity : Activity() {
         brandBlock.addView(brand)
         val subBrand = TextView(this).apply {
             text = "WORKSHOP TERMINAL"
-            textSize = 9f
+            textSize = 9.5f
             setTextColor(muted)
             letterSpacing = 0.16f
         }
@@ -117,13 +117,13 @@ class MainActivity : Activity() {
         // Dashboard clock panel
         val clockPanel = LinearLayout(this).apply {
             orientation = LinearLayout.VERTICAL
-            background = rounded(panel, 18)
-            setPadding(dp(15), dp(10), dp(15), dp(11))
+            background = rounded(panel, 22)
+            setPadding(dp(18), dp(14), dp(18), dp(15))
         }
         val clock = TextView(this).apply {
             id = 1001
             text = timeText()
-            textSize = 42f
+            textSize = 46f
             setTextColor(white)
             typeface = Typeface.create("sans-serif", Typeface.BOLD)
             letterSpacing = 0.02f
@@ -270,15 +270,15 @@ class MainActivity : Activity() {
             setOnClickListener { launchApp(app.packageName) }
         }
         val icon = ImageView(this).apply { setImageDrawable(app.icon); scaleType = ImageView.ScaleType.FIT_CENTER }
-        item.addView(icon, LinearLayout.LayoutParams(dp(40), dp(40)))
+        item.addView(icon, LinearLayout.LayoutParams(dp(46), dp(46)))
         val label = TextView(this).apply {
-            text = app.label; textSize = 11.5f; setTextColor(white); gravity = Gravity.CENTER
+            text = app.label; textSize = 12f; setTextColor(white); gravity = Gravity.CENTER
             typeface = Typeface.create("sans-serif-medium", Typeface.NORMAL); maxLines = 2
             setPadding(0, dp(4), 0, 0)
         }
         item.addView(label)
         val lp = GridLayout.LayoutParams().apply {
-            width = 0; height = dp(82); columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
+            width = 0; height = dp(94); columnSpec = GridLayout.spec(GridLayout.UNDEFINED, 1f)
             setMargins(dp(3), dp(3), dp(3), dp(3))
         }
         item.layoutParams = lp
