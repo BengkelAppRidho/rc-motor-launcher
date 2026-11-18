@@ -5,13 +5,22 @@ plugins {
 
 android {
     namespace = "id.rcmotor.launcher"
-    compileSdk = 35
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "id.rcmotor.launcher"
         minSdk = 29
-        targetSdk = 35
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        jvmTarget = "17"
     }
 }
