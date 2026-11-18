@@ -80,6 +80,14 @@ class MainActivity : Activity() {
             orientation = LinearLayout.HORIZONTAL
             gravity = Gravity.CENTER_VERTICAL
         }
+        val logo = ImageView(this).apply {
+            setImageResource(R.drawable.rc_logo)
+            scaleType = ImageView.ScaleType.FIT_CENTER
+        }
+        val logoLp = LinearLayout.LayoutParams(dp(42), dp(42))
+        logoLp.rightMargin = dp(10)
+        top.addView(logo, logoLp)
+
         val brandBlock = LinearLayout(this).apply { orientation = LinearLayout.VERTICAL }
         val brand = TextView(this).apply {
             text = "RC MOTOR"
