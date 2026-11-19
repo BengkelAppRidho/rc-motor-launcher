@@ -1,0 +1,19 @@
+RC MOTOR LAUNCHER — RELEASE SOURCE 1.2
+
+Included changes:
+- Home dashboard clock panel has a minimum height and a fixed motor image height.
+- Release APK is signed using the permanent GitHub Actions keystore secrets.
+- versionCode is 3 and versionName is 1.2.
+
+GitHub repository secrets required (names must match exactly):
+- KEYSTORE_BASE64
+- KEYSTORE_PASSWORD
+- KEY_ALIAS
+
+The workflow builds app-release.apk with `gradle assembleRelease`.
+Never upload the .jks file or passwords to the repository.
+
+IMPORTANT INSTALL NOTE:
+The previously distributed APKs were debug builds. Their signing certificate is different from the permanent release keystore. Android will reject an update across different signing certificates. Therefore, the first installation that switches from the old debug APK to this permanent release-signed APK may require uninstalling the old debug app once. That can erase its local settings. After this release-signed APK is installed, future APKs must use the same keystore and a higher versionCode; those updates should install without uninstalling.
+
+This source package has not been built or tested on a physical Redmi 9A in this environment. Confirm the GitHub Actions build succeeds, then test the APK on the device before relying on it.
