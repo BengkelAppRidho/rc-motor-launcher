@@ -116,11 +116,13 @@ class MainActivity : Activity() {
         val clockPanel = FrameLayout(this).apply {
             background = gradientCard(GradientDrawable.Orientation.TL_BR, panelTop, panelBottom, Color.rgb(63, 76, 88), 22)
             clipToOutline = true
+            minimumHeight = dp(155)
         }
         val motorImage = ImageView(this).apply {
             setImageResource(R.drawable.motor_panel); scaleType = ImageView.ScaleType.CENTER_CROP; alpha = 0.48f
         }
-        val imageLp = FrameLayout.LayoutParams(dp(205), -1, Gravity.RIGHT)
+        // Fixed image height prevents MATCH_PARENT from expanding the wrap-content clock panel.
+        val imageLp = FrameLayout.LayoutParams(dp(205), dp(155), Gravity.RIGHT or Gravity.TOP)
         clockPanel.addView(motorImage, imageLp)
         val fade = View(this).apply {
             background = GradientDrawable(GradientDrawable.Orientation.LEFT_RIGHT, intArrayOf(panelTop, Color.argb(225, 28, 38, 48), Color.argb(45, 12, 18, 24)))
