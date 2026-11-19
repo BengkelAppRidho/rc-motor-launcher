@@ -150,7 +150,7 @@ class MainActivity : Activity() {
         statusRow.addView(status)
         clockContent.addView(statusRow)
         clockPanel.addView(clockContent, FrameLayout.LayoutParams(-1, -2, Gravity.TOP or Gravity.LEFT))
-        val clockLpPanel = LinearLayout.LayoutParams(-1, -2); clockLpPanel.bottomMargin = dp(12)
+        val clockLpPanel = LinearLayout.LayoutParams(-1, dp(155)); clockLpPanel.bottomMargin = dp(12)
         root.addView(clockPanel, clockLpPanel)
 
         // Section heading with orange icon and rule.
